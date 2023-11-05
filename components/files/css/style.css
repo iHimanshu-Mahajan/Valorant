@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@700&display=swap');
+
+@font-face {
+  font-family: 'Valorant';
+  src: url(../../fonts/Valorant-Font.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #EDE9E0;
+  overflow-x: hidden
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.navBar {
+  padding: 1em;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  background-color: #292C31;
+}
+
+.logo {
+  width: 7.5em;
+  margin-left: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navOptions {
+  margin-left: 13em;
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+.navOptions li {
+  padding: 0.25em 0.75em;
+  position: relative;
+  border-bottom: 0.25em solid #FF4656;
+}
+
+.navOptions li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  border-bottom: 0.25em solid #292C31;
+  transition: 0.3s ease;
+}
+
+.navOptions li span {
+  position: relative;
+  z-index: 2;
+}
+
+.navOptions li:hover::before {
+  width: 0%;
+}
+
+.navOptions li:hover {
+  border-bottom: 0.25em solid #FF4656;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  width: 1.5em;
+  color: white;
+  position: relative;
+  top: 7px;
+}
+
+.hamburgerMenu {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  height: 100vh;
+  display: none;
+  right: -200px;
+  top: 1px;
+  background-color: #292C31;
+  transition: transform ease-out 0.3s;
+}
+
+.showMenu {
+  transform: translateX(-200px);
+}
+
+.hamburgerMenu ul {
+  display: none;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+.hamburgerMenu svg {
+  width: 1.5em;
+  color: white;
+}
+
+.hamburgerMenu .closeIcon {
+  text-align: right;
+}
+
+.hamburgerMenu li {
+  width: 200px;
+  line-height: 24px;
+  padding: 1.5em;
+  text-align: right;
+}
+
+.hamburgerMenu li:active {
+  color: #7b7b7b;
+}
+
+.backgroundVideo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  filter: brightness(50%);
+}
+
+.videoScreen {
+  width: 100%;
+  height: 80vh;
+  display: block;
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.backgroundVideo video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.title p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all linear 0.3s;
+}
+
+.title h1 {
+  margin: 0.5em;
+  font-family: "Valorant";
+  font-size: 5rem;
+  letter-spacing: 6px;
+  transition: all linear 0.3s;
+  transition-delay: 0.3s;
+}
+
+.title button {
+  width: 200px;
+  padding: 1em 2em;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  transition: transform linear 0.3s 0.6s, opacity linear 0.3s 0.6s, background-color linear 0.3s;
+}
+
+.title button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #FF4656;
+  transition: 0.3s ease-out;
+}
+
+.title button span {
+  position: relative;
+  z-index: 2;
+}
+
+.title button:hover::before {
+  width: 0%;
+}
+
+.title button:hover {
+  color: white;
+  background-color: #292C31;
+}
+
+.intro {
+  max-width: 1080px;
+  margin: 64px auto;
+  position: relative;
+}
+
+.intro h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -6px;
+  transition: all linear 0.3s;
+}
+
+.intro .content {
+  padding: 3em;
+  display: flex;
+  justify-content: space-around;
+  gap: 3em;
+}
+
+.intro .text {
+  max-width: 400px;
+  font-weight: 600;
+  color: #818181;
+  margin: auto;
+}
+
+.intro .text h3 {
+  color: #292C31;
+  transition: all linear 0.3s;
+}
+
+.intro .text p {
+  margin: 1.5em 0;
+  line-height: 1.5em;
+  font-size: 0.85rem;
+  transition: all linear 0.3s;
+  transition-delay: 0.3s;
+}
+
+.intro .text button {
+  width: 200px;
+  padding: 1em 2em;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  transition: transform linear 0.3s 0.6s, opacity linear 0.3s 0.6s, background-color linear 0.3s;
+  transition-delay: 0.6s;
+}
+
+.intro button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #FF4656;
+  transition: 0.3s ease;
+}
+
+.intro button span {
+  position: relative;
+  z-index: 2;
+}
+
+.intro button:hover::before {
+  width: 0%;
+}
+
+.intro .text button:hover {
+  color: white;
+  background-color: #292C31;
+}
+
+.intro .gameplayVideo {
+  margin: auto;
+  width: 600px;
+}
+
+.gameplayVideo video {
+  height: 100%;
+  width: 100%;
+}
+
+.agents {
+  margin: 4em auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FF4656;
+}
+
+.agentsContainer {
+  position: relative;
+  max-width: 1080px;
+  display: flex;
+  justify-content: space-around;
+  gap: 3em;
+  align-items: center;
+  margin: auto;
+}
+
+.agentsImage {
+  position: relative;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.reyna {
+  position: relative;
+  z-index: 2;
+  width: 650px;
+}
+
+.yoru {
+  position: absolute;
+  z-index: 1;
+  width: 450px;
+  transform: translateX(250px);
+}
+
+.agents .content {
+  width: 600px;
+  color: white;
+  padding: 3em;
+}
+
+.agents .content h2 {
+  width: 100px;
+  padding-bottom: 0.5em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 88px;
+  letter-spacing: -6px;
+  text-transform: uppercase;
+  color: white;
+  transition: all linear 0.3s;
+}
+
+.agents h3 {
+  color: white;
+  text-transform: uppercase;
+  transition: all linear 0.3s;
+}
+
+.agents p {
+  margin: 3em 0;
+  line-height: 24px;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all linear 0.3s;
+  transition-delay: 0.3s;
+}
+
+.agents button {
+  width: 200px;
+  padding: 1em 2em;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: white;
+  border: none;
+  transition: transform linear 0.3s 0.6s, opacity linear 0.3s 0.6s, background-color linear 0.3s;
+}
+
+.agents button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: white;
+  transition: 0.3s ease-out;
+}
+
+.agents button span {
+  position: relative;
+  z-index: 2;
+}
+
+.agents button:hover::before {
+  width: 0%;
+}
+
+.agents button:hover {
+  color: white;
+  background-color: #292C31;
+}
+
+.map {
+  padding: 3em;
+  position: relative;
+}
+
+.map img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 960px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map .content {
+  max-width: 1080px;
+  position: relative;
+  z-index: 2;
+  margin: auto auto auto 15%;
+  font-weight: 600;
+}
+
+.map .content h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -6px;
+  transition: all linear 0.3s;
+}
+
+.map .content .text {
+  max-width: 300px;
+}
+
+.map .content h3 {
+  margin: 0 10px;
+  text-transform: uppercase;
+  transition: all linear 0.3s;
+}
+
+.map .content p {
+  margin: 3rem 0;
+  line-height: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #292C31;
+  transition: all linear 0.3s;
+  transition-delay: 0.3s;
+}
+
+.map .content button {
+  width: 200px;
+  padding: 1em 2em;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #FF4656;
+  border: none;
+  transition: transform linear 0.3s 0.6s, opacity linear 0.3s 0.6s, background-color linear 0.3s;
+}
+
+.map button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #FF4656;
+  transition: 0.3s ease;
+}
+
+.map button span {
+  position: relative;
+  z-index: 2;
+}
+
+.map button:hover::before {
+  width: 0%;
+}
+
+.map .content button:hover {
+  color: white;
+  background-color: #292C31;
+}
+
+footer {
+  position: relative;
+  z-index: 3;
+  color: white;
+  background-color: #292C31;
+}
+
+.subfooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  gap: 1.5em;
+  background-color: black;
+}
+
+.subfooter p {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.subfooter p:hover {
+  cursor: pointer;
+  background-color: #7b7b7b;
+}
+
+.mainfooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.mainfooter p {
+  width: 60%;
+  padding: 1em;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #7b7b7b;
+}
+
+.mainfooter .links {
+  width: 70%;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.links li {
+  padding: 0.2en 0.4em;
+  border-radius: 5px;
+  font-size: 1rem
+}
+
+.links li:hover {
+  cursor: pointer;
+  background-color: #7b7b7b;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+@media (max-width: 640px) {
+  .navBar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navOptions {
+    display: none;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+  }
+
+  .intro h2 {
+    font-size: 5rem;
+    text-align: left;
+    padding: 3rem;
+
+  }
+
+  .intro .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .intro .text {
+    max-width: 100%;
+  }
+
+  .intro .gameplayVideo {
+    width: 100%
+  }
+
+  .agentsContainer {
+    flex-direction: column-reverse;
+    gap: 0;
+    width: 100%;
+  }
+
+  .agentsContainer .agentsImage {
+    max-width: 100%;
+  }
+
+  .reyna {
+    display: none;
+  }
+
+  .yoru {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    transform: translate(0);
+  }
+
+  .agents .content {
+    width: 100%;
+  }
+
+  .agents .content h2 {
+    font-size: 5rem;
+    width: 100%;
+  }
+
+  .map {
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .map img {
+    position: static;
+    max-width: 100%;
+  }
+
+  .map .content {
+    padding: 3em;
+    margin: 0;
+  }
+
+  .map .content h2 {
+    font-size: 5rem;
+  }
+
+  .map .content .text {
+    max-width: 100%;
+  }
+
+  .subfooter {
+    font-size: 0.7rem;
+  }
+
+  .mainfooter p {
+    width: 100%;
+  }
+
+  .mainfooter .links {
+    width: 100%;
+  }
+
+  .mainfooter .links li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navOptions {
+    display: none;
+  }
+
+  .hamburgerMenu ul {
+    display: block;
+  }
+
+  .intro h2 {
+    font-size: 5rem;
+    text-align: left;
+    padding: 3rem;
+
+  }
+
+  .intro .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .intro .text {
+    max-width: 100%;
+  }
+
+  .intro .gameplayVideo {
+    width: 100%
+  }
+
+  .agentsContainer {
+    flex-direction: column-reverse;
+    gap: 0;
+    width: 100%;
+  }
+
+  .agentsContainer .agentsImage {
+    max-width: 100%;
+  }
+
+  .reyna {
+    display: none;
+  }
+
+  .yoru {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    transform: translate(0);
+  }
+
+  .agents .content {
+    width: 100%;
+  }
+
+  .agents .content h2 {
+    font-size: 5rem;
+    width: 100%;
+  }
+
+  .map {
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .map img {
+    position: static;
+    max-width: 100%;
+  }
+
+  .map .content {
+    padding: 3em;
+    margin: 0;
+  }
+
+  .map .content h2 {
+    font-size: 5rem;
+  }
+
+  .map .content .text {
+    max-width: 100%;
+  }
+
+  .subfooter {
+    font-size: 0.7rem;
+  }
+
+  .mainfooter p {
+    width: 100%;
+  }
+
+  .mainfooter .links {
+    width: 100%;
+  }
+
+  .mainfooter .links li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .map .content {
+    margin: 0;
+    position: relative;
+    left: 35%;
+  }
+}
